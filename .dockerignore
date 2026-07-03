@@ -1,0 +1,40 @@
+backend/text_processing/
+backend/cache/
+backend/logs/
+backend/__pycache__/
+backend/logs/
+backend/index/
+backend/dataset/
+backend/qdrant_data/
+backend/qdrant_index/
+.venv/
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+*.egg-info/
+**/.pytest_cache/
+
+# Backend data/runtime dirs (already volume-mounted anyway)
+backend/cache/
+backend/logs/
+backend/index/
+backend/dataset/
+backend/qdrant_data/
+backend/qdrant_index/
+backend/text_processing/
+
+
+# Environment & tooling
+.venv/
+.git/
+.gitignore
+**/.DS_Store
+**/*.log
+
+# Docker files themselves (no need to copy these in)
+.dockerignore
+docker-compose.yml
+Dockerfile.backend
+Dockerfile.frontend

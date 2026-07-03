@@ -1,0 +1,47 @@
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: backend
+    expose:
+      - "8000"
+    volumes:
+      - ./backend/cache:/app/cache
+      - ./backend/dataset:/app/dataset
+      - ./backend/qdrant_data:/app/qdrant_data
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    gpus: all
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: frontend
+    expose:
+      - "8501"
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=/api
+      - BACKEND_INTERNAL_URL=http://backend:8000
+      - PYTHONUNBUFFERED=1
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    restart: always
+
