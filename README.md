@@ -55,6 +55,24 @@ Before running the application, ensure you have:
 
 ---
 
+## System Requirements
+
+Before running the chatbot, ensure that your system has sufficient GPU memory. The required VRAM depends on the selected language model and deployment configuration.
+
+| Component | Estimated VRAM Usage |
+|-----------|---------------------:|
+| Qwen3-30B-A3B (4-bit quantized, 14k-token context) | 20–25 GB |
+| Qwen3-4B Reranker | 3–4 GB |
+| BGE-M3 Embedding Model | 1 GB |
+| Safety Margin | 2–4 GB |
+| **Total Estimated VRAM** | **26–34 GB** |
+
+**Note:** The first startup may take several minutes as the required AI models are downloaded and loaded into GPU memory. Systems with insufficient VRAM may experience slow performance or may be unable to run the application.
+
+You could also change the components by changing their model name in the AdvancedRAGConfig class in maincode.py or changing in backendCode.py file when calling the main function.
+
+---
+
 ## Installation
 
 Clone the repository.
