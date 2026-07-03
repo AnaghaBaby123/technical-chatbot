@@ -72,6 +72,29 @@ Before running the chatbot, ensure that your system has sufficient GPU memory. T
 You could also change the components by changing their model name in the AdvancedRAGConfig class in maincode.py or changing in backendCode.py file when calling the main function.
 
 ---
+## Adding  Machine Documentation
+
+1. Create a new folder inside the backend/dataset directory  using the naming convention:
+
+```
+MachineName_AccessLevel
+```
+If access level is not needed, just leave it empty
+
+2. Add the machine PDF files to this folder.
+
+3. Also, update the machine list inside (Around code line 640)
+
+```
+frontend/app.py
+```
+
+by adding the machine name to the `MACHINES` list.
+
+The machine name added here should be same as folder name. (case sensistiity is not a problem, but spelling should be same - as this name is used for machine-based filtering later)
+
+
+---
 
 ## Installation
 
@@ -141,34 +164,6 @@ Stop all containers.
 
 ```bash
 docker compose down
-```
-
----
-
-## Adding  Machine Documentation
-
-1. Create a new folder inside the dataset directory (inside the backend folder) using the naming convention:
-
-```
-MachineName AccessLevel
-```
-If access levl is not needed, just leave it empty
-
-2. Add the machine PDF files to this folder.
-
-3. Update the machine list inside
-
-```
-frontend/app.py
-```
-
-by adding the machine name to the `MACHINES` list.
-
-4. Rebuild the application.
-
-```bash
-docker compose build
-docker compose up
 ```
 
 ---
