@@ -145,9 +145,9 @@ docker compose down
 
 ---
 
-## Adding New Machine Documentation
+## Adding  Machine Documentation
 
-1. Create a new folder inside the dataset directory using the naming convention:
+1. Create a new folder inside the dataset directory (inside the backend folder) using the naming convention:
 
 ```
 MachineName AccessLevel
