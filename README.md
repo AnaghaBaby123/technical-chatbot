@@ -1,22 +1,9 @@
-# Pfeuffer RAG Chatbot
+# RAG-based Chatbot
 
-A Retrieval-Augmented Generation (RAG) chatbot developed for technical machines. The chatbot enables users to ask questions about machine documentation and receive AI-generated answers based on the available manuals and documentation.
-
----
-
-## Features
-
-- Retrieval-Augmented Generation (RAG)
-- Multi-machine document support
-- Section based chunking strategy
-- Machine-based filtering
-- PDF document ingestion
-- Dockerized deployment
-- Machine selection interface
-- Multilingual query support
-- Local Large Language Model (LLM)
+A Retrieval-Augmented Generation (RAG) chatbot developed for answering queries regarding machines. It uses Qdrant databse and enables machine based filtering based on the selected machine.
 
 ---
+
 
 ## Tech Stack
 
@@ -72,7 +59,7 @@ Before running the chatbot, ensure that your system has sufficient GPU memory. T
 You could also change the components by changing their model name in the AdvancedRAGConfig class in maincode.py or changing in backendCode.py file when calling the main function.
 
 ---
-## Adding  Machine Documentation
+## Adding  Dataset (Machines)
 
 1. Create a new folder inside the backend/dataset directory  using the naming convention:
 
