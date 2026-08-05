@@ -16,21 +16,6 @@ A Retrieval-Augmented Generation (RAG) chatbot developed for answering queries r
 
 ---
 
-## Project Structure
-
-```
-app/
-│
-├── backend/
-├── frontend/
-├── docker-compose.yml
-├── Dockerfile.backend
-├── Dockerfile.frontend
-└── README.md
-```
-
----
-
 ## Prerequisites
 
 Before running the application, ensure you have:
